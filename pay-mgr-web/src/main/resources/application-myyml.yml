@@ -1,0 +1,16 @@
+myyaml:
+  simplePro: I'am the yy
+  simpleArr: 1,2,3,4,5
+  complexList:
+    - name: name
+      value: 张三
+    - name: name
+      value: 李四
+  simpleMap:
+      key1: age
+      key2: birthday
+ # simpleList:
+ #   - name: apple
+#    - {name: banbna}
+
+

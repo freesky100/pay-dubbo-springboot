@@ -1,0 +1,8 @@
+myname: yy_1
+myself:
+    driver: com.mysql.jdbc.Driver
+spring:
+  profiles:
+    active: dev
+
+
