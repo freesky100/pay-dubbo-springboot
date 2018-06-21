@@ -3,8 +3,6 @@ package com.jhf.pay.common.core.utils;
 import com.jhf.pay.common.core.entity.BaseEntity;
 import com.jhf.pay.common.core.repostory.BaseRepository;
 import com.jhf.pay.common.core.repostory.BaseRepositoryImpl;
-import com.sun.xml.internal.bind.v2.model.core.ID;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean;
 import org.springframework.data.jpa.repository.support.QuerydslJpaRepository;

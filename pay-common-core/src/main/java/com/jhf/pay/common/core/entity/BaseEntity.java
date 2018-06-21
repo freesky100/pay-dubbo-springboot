@@ -25,7 +25,8 @@ import java.util.Date;
 /**
  *
  * 如果小项目可以使用base，通过重写factory实现
- * 如果大项目表比较复杂的话，可以使用embablle方式引用公共字段，否则重写factory麻烦
+ * 如果大项目表比较复杂的话，可以使用embbled方式引用公共字段，否则重写factory麻烦
+ * 充分说明聚合或组合方式由于继承
  */
 
 

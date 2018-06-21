@@ -2,15 +2,12 @@ package com.jhf.pay.common.core.repostory;
 
 import com.jhf.pay.common.core.entity.BaseEntity;
 import com.jhf.pay.common.core.enums.DelStateEnum;
-import com.sun.xml.internal.bind.v2.model.core.ID;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import javax.transaction.Transactional;
 import java.io.Serializable;
-import java.sql.SQLException;
 import java.util.Optional;
 
 /**
@@ -41,11 +38,13 @@ public class BaseRepositoryImpl<T extends BaseEntity,ID extends Serializable> ex
     }
 
     @Override
+    @Transactional
     public void deleteById(ID id) {
-        Optional<T> t = findById(id);
-        T t1;
-        if(t.isPresent()){
-            t1 = t.get();
+        Optional<T> optional = findById(id);
+        System.out.println(optional);
+        if(optional.isPresent()){
+            T t1 = optional.get();
+            System.out.println(t1);
             t1.setState(DelStateEnum.DEL.getState());
             super.save(t1);
         }else {
@@ -55,6 +54,7 @@ public class BaseRepositoryImpl<T extends BaseEntity,ID extends Serializable> ex
     }
 
     @Override
+    @Transactional
     public void delete(T entity) {
         entity.setState(DelStateEnum.DEL.getState());
         super.save(entity);
