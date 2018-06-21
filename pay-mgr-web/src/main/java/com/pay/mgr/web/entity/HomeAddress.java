@@ -1,5 +1,8 @@
 package com.pay.mgr.web.entity;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.pay.mgr.web.controller.MerchantController;
+import com.pay.mgr.web.dto.MerchantDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,14 +32,19 @@ import javax.persistence.Embeddable;
 public class HomeAddress {
 
 
+    @JsonView(MerchantDto.MerchantDetail.class)
     @Column(length = 30)
     private String province;
+    @JsonView(MerchantDto.MerchantDetail.class)
     @Column(length = 30)
     private String city;
+    @JsonView(MerchantDto.MerchantDetail.class)
     @Column(length = 50)
     private String area;
+    @JsonView(MerchantDto.MerchantDetail.class)
     @Column(length = 50)
     private String address;
+    @JsonView(MerchantDto.MerchantDetail.class)
     @Column(columnDefinition = "int(6)")
     private int zipCode;
 

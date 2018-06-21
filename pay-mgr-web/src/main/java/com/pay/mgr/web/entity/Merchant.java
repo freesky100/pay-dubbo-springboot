@@ -5,24 +5,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.jhf.pay.common.core.entity.BaseEntity;
 import com.pay.mgr.web.enums.Sex;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import net.bytebuddy.asm.Advice;
 
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * //          佛曰:
- * //                  写字楼里写字间，写字间里程序员；
- * //                  程序人员写程序，又拿程序换酒钱。
- * //                  酒醒只在网上坐，酒醉还来网下眠；
- * //                  酒醉酒醒日复日，网上网下年复年。
- * //                  但愿老死电脑间，不愿鞠躬老板前；
- * //                  奔驰宝马贵者趣，公交自行程序员。
- * //                  别人笑我忒疯癫，我笑自己命太贱；
- * //                  不见满街漂亮妹，哪个归得程序员？
- * Created by yw on 2018/5/25.
- */
 /**
  * @ManyToOne
  * optinal ==外键是否可以为空
@@ -51,12 +40,12 @@ import java.util.List;
  *
  */
 
-
-
-
+//@NamedQuery(name="Merchant.findByTheUserName",
+//        query = "select m from Merchant m where m.name=?1")
 @Entity
 //@Table(name="t_merchant")
 @Data
+@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 public class Merchant extends BaseEntity {
 
@@ -73,7 +62,7 @@ public class Merchant extends BaseEntity {
     //默认建一个oneToMany记录
     //集合对象可以是embedded对象 List<Address>
     @ElementCollection(fetch = FetchType.EAGER)
-    @JsonIgnoreProperties(value = "hobbies")
+//    @JsonIgnoreProperties(value = "hobbies")
     private List<String> hobbies;
 
 
@@ -93,3 +82,15 @@ public class Merchant extends BaseEntity {
         this.idCard = idCard;
     }
 }
+/**
+ * //          佛曰:
+ * //                  写字楼里写字间，写字间里程序员；
+ * //                  程序人员写程序，又拿程序换酒钱。
+ * //                  酒醒只在网上坐，酒醉还来网下眠；
+ * //                  酒醉酒醒日复日，网上网下年复年。
+ * //                  但愿老死电脑间，不愿鞠躬老板前；
+ * //                  奔驰宝马贵者趣，公交自行程序员。
+ * //                  别人笑我忒疯癫，我笑自己命太贱；
+ * //                  不见满街漂亮妹，哪个归得程序员？
+ * Created by yw on 2018/5/25.
+ */

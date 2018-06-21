@@ -41,7 +41,7 @@ import java.util.List;
  *
  *
  */
-
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Entity
 @Data
 public class Book extends BaseEntity{

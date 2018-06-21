@@ -5,6 +5,8 @@ import com.jhf.pay.common.core.utils.DateUtils;
 import com.pay.mgr.web.entity.HomeAddress;
 import com.pay.mgr.web.entity.IdCard;
 import com.pay.mgr.web.entity.Merchant;
+import com.pay.mgr.web.entity.QMerchant;
+import com.querydsl.core.types.dsl.BooleanExpression;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -280,5 +282,40 @@ public class MerchantRepositoryTest {
         System.out.println(pageList.getContent());
     }
 
+
+    @Test
+    public void testFindAll(){
+        Pageable pageable = PageRequest.of(0,10);
+        Page<Merchant> page = merchantRepository.findAll(pageable);
+        System.out.println(page.getContent());
+
+    }
+
+
+    /**
+     * 存在问题
+     */
+    @Test
+    public void testNameQuery(){
+//        List<Merchant> list = merchantRepository.findByTheUserName("张三");
+//        System.out.println(list);
+//        Assert.notNull(list,"NOt null");
+    }
+
+    /**
+     * 存在问题
+     */
+    @Test
+    public void testDslFind(){
+//        QMerchant qMerchant = QMerchant.merchant;
+//
+//        BooleanExpression t1 = qMerchant.id.eq(27l);
+//        BooleanExpression t2 = qMerchant.name.like("张三%");
+//        Iterable<Merchant> iterable = merchantRepository.findAll(t1.and(t2));
+//        while(iterable.iterator().hasNext()){
+//            Merchant merchant= iterable.iterator().next();
+//            System.out.println(merchant);
+//        }
+    }
 
 }
